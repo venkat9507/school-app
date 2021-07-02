@@ -1,5 +1,7 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_school_app_july_1/constants/color_constants.dart';
+import 'package:flutter_school_app_july_1/constants/text_constants.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 class SplashScreen extends StatefulWidget {
@@ -30,12 +32,33 @@ class _SplashScreenState extends State<SplashScreen> {
             decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(16)),  color: Colors.black,),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset(
-                'images/wel.png',
-                width: 120,
-              ),
+              child: Icon(Icons.school,size: 100,color: bgColor,)
+              // Image.asset(
+              //   'assets/logo.jpeg',
+              //   width: double.infinity,
+              // ),
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
+           DefaultTextStyle(
+            style: const TextStyle(
+            fontSize: 20.0,
+              color: Colors.black,
+              fontWeight: FontWeight.bold
+             ),
+            child: AnimatedTextKit(
+             animatedTexts: [
+             WavyAnimatedText('Welcome'),
+
+               ],
+            isRepeatingAnimation: true,
+           onTap: () {
+            print("Tap Event");
+             },
+            ),
+            ),
           SizedBox(
             height: 10,
           ),

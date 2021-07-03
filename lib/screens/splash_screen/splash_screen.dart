@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_school_app_july_1/constants/color_constants.dart';
 import 'package:flutter_school_app_july_1/constants/text_constants.dart';
+import 'package:flutter_school_app_july_1/screens/dashboard/dashboard.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 class SplashScreen extends StatefulWidget {
@@ -16,8 +17,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 3),(){
-      Get.toNamed('dashBoardDetails');
+    Future.delayed(Duration(seconds: 4),(){
+      Get.to(DashBoard());
     });
   }
   @override
@@ -76,7 +77,7 @@ class Loading extends StatelessWidget {
     return Container(
         color: Colors.white,
         child: SpinKitFadingCircle(
-          color: primaryColor,
+          color: primary,
           size: 30,
         ));
   }

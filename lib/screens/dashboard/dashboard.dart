@@ -45,6 +45,9 @@ class _DashBoardState extends State<DashBoard> {
             automaticallyImplyLeading:true,
             backgroundColor: primary,
             title: Text('School App'),
+            actions: [
+              IconButton(onPressed:(){}, icon: Icon(Icons.circle_notifications,size: 30,))
+            ],
           ),
             body: Container(
               height:  size.height,

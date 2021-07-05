@@ -39,20 +39,20 @@ class _HomePageState extends State<HomePage> {
                 Card(
                   color: Colors.white,
                   child: ListTile(
-                    leading:Icon(Icons.library_add_check),
-                    title: Text('Attendance'),
+                    leading:Icon(Icons.book),
+                    title: Text('Home Work'),
                     subtitle: Text('This Month'),
-                    trailing: Text('0%'),
+                    trailing: Text('3'),
                   ),
 
                 ),
                 Card(
                   color: Colors.white,
                   child: ListTile(
-                    leading:Icon(Icons.library_add_check),
-                    title: Text('Attendance'),
+                    leading:Icon(Icons.list_alt),
+                    title: Text('My Pending Task'),
                     subtitle: Text('This Month'),
-                    trailing: Text('0%'),
+                    trailing: Text('0'),
                   ),
 
                 ),

@@ -2,6 +2,7 @@ import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_school_app_july_1/constants/color_constants.dart';
 import 'package:flutter_school_app_july_1/constants/text_constants.dart';
+import 'package:flutter_school_app_july_1/screens/widgets/appbar.dart';
 import 'package:flutter_school_app_july_1/screens/widgets/profile.dart';
 import 'package:flutter_school_app_july_1/screens/widgets/text_widget.dart';
 import 'package:get/get.dart';
@@ -25,14 +26,7 @@ class _ProfileState extends State<Profile> {
     return DefaultTabController(
       length: tabs.length,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: primary,
-          leading: IconButton(icon: Icon(Icons.arrow_back),
-              onPressed: (){
-            Get.back();
-          }),
-          title: Text('Profile',style: TextStyle(color: textcolor),),
-        ),
+        appBar: appBar('Profile'),
         body: Column(
           children: [
             Card(

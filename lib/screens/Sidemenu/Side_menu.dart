@@ -4,6 +4,7 @@ import 'package:flutter_school_app_july_1/constants/color_constants.dart';
 import 'package:flutter_school_app_july_1/constants/controller.dart';
 import 'package:flutter_school_app_july_1/constants/text_constants.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/profile/profile.dart';
+import 'package:flutter_school_app_july_1/screens/Sidemenu/timeTable/time_table.dart';
 import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -118,8 +119,7 @@ class _SideMenuState extends State<SideMenu> {
                     child: InkWell(
                       onTap: (){
 
-                        pageViewController.controller.jumpToPage(8);
-                        Get.back();
+                       Get.to(TimeTable());
                       },
                       child: ListTile(
                         leading: Icon(Icons.calendar_today_sharp),

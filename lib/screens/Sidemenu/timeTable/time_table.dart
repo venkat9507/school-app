@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_school_app_july_1/constants/color_constants.dart';
+import 'package:flutter_school_app_july_1/screens/widgets/appbar.dart';
+import 'package:get/get.dart';
 
 
 class TimeTable extends StatefulWidget {
@@ -11,6 +14,15 @@ class TimeTable extends StatefulWidget {
 class _TimeTableState extends State<TimeTable> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: appBar('Time Table'),
+      body: Column(
+        children: [
+
+        ],
+      ),
+    );
   }
+
+
 }

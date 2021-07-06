@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_school_app_july_1/constants/color_constants.dart';
 import 'package:flutter_school_app_july_1/constants/controller.dart';
 import 'package:flutter_school_app_july_1/constants/text_constants.dart';
+import 'package:flutter_school_app_july_1/screens/Sidemenu/attendence/attendence.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/profile/profile.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/timeTable/time_table.dart';
 import 'package:get/get.dart';
@@ -207,8 +208,7 @@ class _SideMenuState extends State<SideMenu> {
                     child: InkWell(
                       onTap: (){
 
-                        pageViewController.controller.jumpToPage(13);
-                        Get.back();
+                        Get.to(Attendance());
                       },
                       child: ListTile(
                         leading: Icon(Icons.library_add_check),

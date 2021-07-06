@@ -11,6 +11,7 @@ import 'package:flutter_school_app_july_1/screens/Sidemenu/downloadCenter/downlo
 import 'package:flutter_school_app_july_1/screens/Sidemenu/fees/fees.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/googleMeet/google_meet.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/homePage/home_page.dart';
+import 'package:flutter_school_app_july_1/screens/Sidemenu/homePage/pendingtask.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/homeWork/home_work.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/hostels/hostels.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/lessonPlan/lesson_plan.dart';
@@ -86,6 +87,7 @@ class _DashBoardState extends State<DashBoard> {
                           TransportRoute(),
                           Hostels(),
                           About(),
+                          PendingTask(),
                         ]),
                   ),
                   Expanded(

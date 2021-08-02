@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_school_app_july_1/constants/color_constants.dart';
 import 'package:flutter_school_app_july_1/constants/controller.dart';
 import 'package:flutter_school_app_july_1/constants/text_constants.dart';
+import 'package:flutter_school_app_july_1/screens/Sidemenu/applyLeave/apply_leave.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/attendence/attendence.dart';
+import 'package:flutter_school_app_july_1/screens/Sidemenu/fees/fees.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/profile/profile.dart';
+import 'package:flutter_school_app_july_1/screens/Sidemenu/syllabusStatus/syllabus_status.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/timeTable/time_table.dart';
 import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
@@ -79,8 +82,8 @@ class _SideMenuState extends State<SideMenu> {
                     child: InkWell(
                       onTap: (){
 
-                        pageViewController.controller.jumpToPage(5);
-                        Get.back();
+                       Get.to(Fees());
+                        // Get.back();
                       },
                       child: ListTile(
                         leading: Icon(Icons.money),
@@ -140,8 +143,8 @@ class _SideMenuState extends State<SideMenu> {
                     child: InkWell(
                       onTap: (){
 
-                        pageViewController.controller.jumpToPage(9);
-                        Get.back();
+                        Get.to(SyllabusStatus());
+
                       },
                       child: ListTile(
                         leading: Icon(Icons.list),
@@ -180,8 +183,8 @@ class _SideMenuState extends State<SideMenu> {
                     child: InkWell(
                       onTap: (){
 
-                        pageViewController.controller.jumpToPage(11);
-                        Get.back();
+                        Get.to(()=>ApplyLeave());
+
                       },
                       child: ListTile(
                         leading: Icon(Icons.calendar_today_sharp),

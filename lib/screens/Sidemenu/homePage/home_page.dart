@@ -35,20 +35,23 @@ class _HomePageState extends State<HomePage> {
             // Expanded(child: ComplicatedImageDemo(),flex: 1,),
             Expanded(flex: 1,child: Column(
               children: [
-                Card(
-                  color: Colors.white,
-                  child: ListTile(
-                    leading:Icon(Icons.library_add_check,color: accentcolor,),
-                    title: Text('Attendance'),
-                    subtitle: Text('This Month'),
-                    trailing: Text('0%'),
-                    onTap: (){
+                InkWell(
+                  onTap: (){
 
-                      Get.to(Attendance());
+                    Get.to(Attendance());
 
-                    },
+                  },
+                  child: Card(
+                    color: Colors.white,
+                    child: ListTile(
+                      leading:Icon(Icons.library_add_check,color: accentcolor,),
+                      title: Text('Attendance'),
+                      subtitle: Text('This Month'),
+                      trailing: Text('0%'),
+
+                    ),
+
                   ),
-
                 ),
                 Card(
                   color: Colors.white,

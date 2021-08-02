@@ -22,7 +22,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
   TextStyle(fontSize: 30, fontWeight: FontWeight.w600,color: textcolor);
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    HomeWork(),
+    HomeWorkwidget(),
     Notice(),
     Examination(),
   ];

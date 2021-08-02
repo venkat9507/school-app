@@ -18,9 +18,12 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 4),(){
-      Get.to(DashBoard());
+      Get.off(DashBoard());
+
     });
   }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

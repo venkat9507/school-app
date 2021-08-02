@@ -66,7 +66,7 @@ class _DashBoardState extends State<DashBoard> {
                         controller: pageViewController.controller,
                         children: [
                          HomePage(),
-                          HomeWork(),
+                          HomeWorkwidget(),
                           Notice(),
                           Examination(),
                           Profile(),

@@ -9,12 +9,14 @@ import 'package:flutter_school_app_july_1/screens/Sidemenu/fees/fees.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/profile/profile.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/syllabusStatus/syllabus_status.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/timeTable/time_table.dart';
+import 'package:flutter_school_app_july_1/services/auth.dart';
 import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 
 
 class SideMenu extends StatefulWidget {
-  const SideMenu({Key key}) : super(key: key);
+  const SideMenu({Key key, this.auth}) : super(key: key);
+  final AuthenticationService auth;
 
   @override
   _SideMenuState createState() => _SideMenuState();
@@ -352,6 +354,7 @@ class _SideMenuState extends State<SideMenu> {
                         leading: Icon(Icons.logout),
                         title: Text('Logout'),
                       ),
+                      onTap: widget.auth.signOut,
                     ),
                   ),
                   Center(

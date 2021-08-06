@@ -1,21 +1,39 @@
+// import 'package:firebase/firebase.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_school_app_july_1/constants/color_constants.dart';
-import 'package:flutter_school_app_july_1/constants/firebase_constants.dart';
-import 'package:flutter_school_app_july_1/screens/dashboard/dashboard.dart';
+// import 'package:flutter_school_app_july_1/constants/color_constants.dart';
+// import 'package:flutter_school_app_july_1/constants/firebase_constants.dart';
+// import 'package:flutter_school_app_july_1/screens/dashboard/dashboard.dart';
 import 'package:flutter_school_app_july_1/screens/widgets/text_widget.dart';
-import 'package:get/get.dart';
+import 'package:flutter_school_app_july_1/services/auth.dart';
+// import 'package:get/get.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key key}) : super(key: key);
+  const LoginPage({Key key, @required this.auth}) : super(key: key);
+  final AuthenticationService auth;
 
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final TextEditingController _usernamecontroller= TextEditingController();
+  final TextEditingController _passwordcontroller= TextEditingController();
+
+  String get _username=>_usernamecontroller.text;
+  String get _password=>_passwordcontroller.text;
+
+
+  void _submit()async {
+    print("================================");
+    print(_username);
+    print(_password);
+    print("================================");
+    await widget.auth.signIn(username:_username, password:_password );
+
+  }
 
 
 
@@ -31,23 +49,20 @@ class _LoginPageState extends State<LoginPage> {
 
     super.initState();
   }
-  // final _auth= FirebaseAuth.instance;
-  String mobile;
-  String registernumber;
-  String password;
+  final _auth= FirebaseAuth.instance;
+  //
+  // String username;
+  // String password;
 
-  bool _viewPassword= false;
-  bool  _obscuretext=false;
+
+  bool _viewPassword= true;
+  bool  _obscuretext=true;
 
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
     var physicalPixelWidth = mediaQuery.size.width * mediaQuery.devicePixelRatio;
     var physicalPixelHeight = mediaQuery.size.height * mediaQuery.devicePixelRatio;
-    void  test(){
-      print(physicalPixelHeight);
-      print(physicalPixelWidth);
-    }
 
 
 
@@ -114,8 +129,9 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(height: 50,
                   child: TextField(
+                    controller: _usernamecontroller,
                     onChanged: (value){
-                      registernumber= value;
+                      // username = _usernamecontroller.text;
                     },
                     decoration:InputDecoration(
               hintText: isSelected.first?'  Register Number':'  Mobile Number',
@@ -135,8 +151,9 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(height: 50,
                   child: TextField(
+                    controller: _passwordcontroller,
                     onChanged: (value){
-                      password=value;
+                      // password=_passwordcontroller.text;
                     },
                     textAlign: TextAlign.justify,
                     obscureText: _obscuretext,
@@ -183,18 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                             )
                         )
                     ),
-                    onPressed: (){
-                      test();
-                      // try{
-                      //   final user=_auth.signInWithEmailAndPassword(email: registernumber, password: password);
-                      //   if(user!=null){
-                      //     Get.to(()=>DashBoard());
-                      //   }
-                      // }
-                      // catch(e){
-                      //   print(e);
-                      // }
-                    }, child: TextWidgetBold('Login'))),
+                    onPressed: _submit, child: TextWidgetBold('Login'))),
               )
             ],
           ),

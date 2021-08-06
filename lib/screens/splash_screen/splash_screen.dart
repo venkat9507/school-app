@@ -1,10 +1,14 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+// import 'package:firebase/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_school_app_july_1/constants/color_constants.dart';
-import 'package:flutter_school_app_july_1/constants/text_constants.dart';
-import 'package:flutter_school_app_july_1/screens/dashboard/dashboard.dart';
+// import 'package:flutter_school_app_july_1/constants/firebase_constants.dart';
+// import 'package:flutter_school_app_july_1/constants/text_constants.dart';
+// import 'package:flutter_school_app_july_1/screens/dashboard/dashboard.dart';
+import 'package:flutter_school_app_july_1/screens/loginPage/landingpage.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
+import 'package:flutter_school_app_july_1/services/auth.dart';
 class SplashScreen extends StatefulWidget {
 
 
@@ -18,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 4),(){
-      Get.off(DashBoard());
+      Get.off(LandingPage(auth : AuthenticationService()));
 
     });
   }

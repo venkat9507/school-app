@@ -27,9 +27,11 @@ import 'package:flutter_school_app_july_1/screens/Sidemenu/timeline/timeLine.dar
 import 'package:flutter_school_app_july_1/screens/Sidemenu/transportRoute/transport_route.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/zoomLiveClass/zoom_live_class.dart';
 import 'package:flutter_school_app_july_1/screens/bottomNavbar/bottomNavbar.dart';
+import 'package:flutter_school_app_july_1/services/auth.dart';
 
 class DashBoard extends StatefulWidget {
-  const DashBoard({Key key}) : super(key: key);
+  const DashBoard({Key key, this.auth}) : super(key: key);
+  final AuthenticationService auth;
 
   @override
   _DashBoardState createState() => _DashBoardState();
@@ -41,7 +43,7 @@ class _DashBoardState extends State<DashBoard> {
     return SafeArea(
         child: Scaffold(
           // bottomNavigationBar:
-          drawer: SideMenu(),
+          drawer: SideMenu(auth: widget.auth),
           appBar: AppBar(
             automaticallyImplyLeading:true,
             backgroundColor: primary,

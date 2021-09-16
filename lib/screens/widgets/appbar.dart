@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 AppBar appBar(String title) {
   return AppBar(
-    backgroundColor: primary,
+    // backgroundColor: primary,
     leading: IconButton(icon: Icon(Icons.arrow_back),
         onPressed: (){
           Get.back();

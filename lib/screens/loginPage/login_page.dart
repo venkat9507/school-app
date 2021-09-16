@@ -32,7 +32,6 @@ class _LoginPageState extends State<LoginPage> {
     print(_password);
     print("================================");
     await widget.auth.signIn(username:_username, password:_password );
-
   }
 
 

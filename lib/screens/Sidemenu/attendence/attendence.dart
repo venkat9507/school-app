@@ -20,7 +20,7 @@ class _AttendanceState extends State<Attendance> {
 
       ),
 
-      body: TableEventsExample(),
+      body: Calendar(),
     );
   }
 }

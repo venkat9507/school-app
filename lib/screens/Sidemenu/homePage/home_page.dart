@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_school_app_july_1/constants/color_constants.dart';
 import 'package:flutter_school_app_july_1/constants/controller.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/attendence/attendence.dart';
-import 'package:flutter_school_app_july_1/screens/Sidemenu/homePage/calendar.dart';
+// import 'package:flutter_school_app_july_1/screens/Sidemenu/homePage/calendar.dart';
+import 'package:flutter_school_app_july_1/screens/widgets/calendar.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/homePage/carousel_slider.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/homePage/pendingtask.dart';
 import 'package:flutter_school_app_july_1/screens/Sidemenu/homeWork/home_work.dart';
@@ -80,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                   ),
 
                 ),
-                Expanded(child: TableEventsExample(
+                Expanded(child: Calendar(
 
                 )),
                 
